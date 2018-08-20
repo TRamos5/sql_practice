@@ -48,4 +48,18 @@
 
 -- SELECT name FROM restaurant WHERE last_visited < '2018-08-20' and stars = 5;
 
+-- SELECT * FROM restaurant ORDER BY distance ASC;
 
+-- SELECT * FROM restaurant ORDER BY distance ASC limit 2;
+
+-- SELECT * FROM restaurant ORDER BY stars DESC limit 2;
+
+-- SELECT * FROM restaurant WHERE distance < 2 ORDER BY stars DESC limit 2;
+
+-- SELECT COUNT(*) from restaurant;
+
+-- SELECT COUNT(category) from restaurant;
+
+-- SELECT AVG(stars) category from restaurant GROUP BY category;
+
+-- SELECT MAX(stars) category from restaurant GROUP BY category;
