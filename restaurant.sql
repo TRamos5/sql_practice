@@ -138,3 +138,33 @@
 -- select count(review.review), restaurant.name from review
 -- join restaurant on review.restaurant_id = restaurant.id
 -- group by restaurant.name;
+
+--7 
+-- select review.review, restaurant.name, reviewer.name from review
+-- join restaurant on review.restaurant_id = restaurant.id
+-- join reviewer on review.reviewer_id = reviewer.id;
+
+
+--8
+-- select avg(review.stars), reviewer.name from review
+-- join reviewer on review.reviewer_id = reviewer.id
+-- group by reviewer.name;
+
+--9 
+-- select min(review.stars), reviewer.name from review
+-- join reviewer on review.reviewer_id = reviewer.id 
+-- group by reviewer.name;
+
+--10
+-- select count(restaurant.category), restaurant.category from restaurant
+-- group by restaurant.category;
+
+--11
+-- select review.stars >= 5, restaurant.name from review
+-- join restaurant on review.restaurant_id = restaurant.id
+-- group by review.stars, restaurant.name;
+
+--12
+-- select avg(review.stars), restaurant.category from review
+-- join restaurant on review.restaurant_id = restaurant.id
+-- group by restaurant.category;
