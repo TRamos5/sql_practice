@@ -306,17 +306,17 @@
 --     full outer join project_uses_tech on project_uses_tech.project_id = project.id where tech_id is null;
 -- num 11
 
--- SELECT project.name, COUNT(*) from project_uses_tech 
+-- SELECT project.name, COUNT(project_id) from project_uses_tech 
 --     full outer JOIN project ON project.id = project_id GROUP BY project.name ORDER BY count DESC;
-    -- num 12
+--     num 12
 
--- SELECT tech.name, COUNT(*) from project_uses_tech 
+-- SELECT tech.name, COUNT(tech_id) from project_uses_tech 
 --     full outer JOIN tech ON tech.id = tech_id GROUP BY tech.name ORDER BY count DESC;
     -- num13
 
-select AVG(count) from
-(
-    select project.name, COUNT(*) from project_uses_tech
-    full outer join project on project.id = project_id group by project.name
-)as review_counts
+-- select AVG(count) from
+-- (
+--     select project.name, COUNT(project_id) from project_uses_tech
+--     full outer join project on project.id = project_uses_tech.project_id group by project.name
+-- )as review_counts
 -- num 14

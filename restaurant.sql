@@ -63,3 +63,78 @@
 -- SELECT AVG(stars) category from restaurant GROUP BY category;
 
 -- SELECT MAX(stars) category from restaurant GROUP BY category;
+
+-- CREATE TABLE reviewer (
+--     id serial not null primary key,
+--     name varchar,
+--     email varchar,
+--     karma integer check(karma >= 0 and karma <=7)
+-- );
+
+-- CREATE TABLE review (
+--     id serial not null primary key,
+--     reviewer_id integer references reviewer (id),
+--     stars integer check(stars >=1 and stars <= 5),
+--     title varchar,
+--     review varchar,
+--     restaurant_id integer references restaurant (id)
+-- );
+
+-- insert into reviewer values (
+--     DEFAULT, 'Travis', 't-ram@gmail.com', 1
+-- );
+-- insert into reviewer values (
+--     DEFAULT, 'Matt', 't-ram@gmail.com', 5
+-- );
+-- insert into reviewer values (
+--     DEFAULT, 'Eric', 't-ram@gmail.com', 3
+-- );
+-- insert into reviewer values (
+--     DEFAULT, 'Hussein', 't-ram@gmail.com', 7
+-- );
+
+-- insert into reviewer values (
+--     DEFAULT, 'Sam', 't-ram@gmail.com', 2
+-- );
+
+-- insert into review values (
+--     DEFAULT, 2, 2, 'firstReview', 'good', 2
+-- );
+-- insert into review values (
+--     DEFAULT, 3, 5, 'secondReview', 'good', 3
+-- );
+-- insert into review values (
+--     DEFAULT, 4, 2.3, 'thirdReview', 'good', 4
+-- );
+-- insert into review values (
+--     DEFAULT, 5, 3.5, 'fourthReview', 'good', 5
+-- );
+
+-- 1
+-- select review.review, restaurant.name from review 
+-- join restaurant on review.restaurant_id = restaurant.id
+-- where restaurant_id = 1;
+
+--2 
+-- select review.review, restaurant.name from review
+-- join restaurant on review.restaurant_id = restaurant.id
+-- where restaurant.name = 'Chuys';
+
+--3
+-- select review.review, reviewer.name from review
+-- join reviewer on review.reviewer_id = reviewer.id
+-- where reviewer.name = 'Travis';
+
+--4
+-- select review.review, restaurant.name from review
+-- join restaurant on review.restaurant_id = restaurant.id
+
+--5 
+-- select avg(review.stars), restaurant.name from review
+-- join restaurant on review.restaurant_id = restaurant.id
+-- group by restaurant.name;
+
+--6 
+-- select count(review.review), restaurant.name from review
+-- join restaurant on review.restaurant_id = restaurant.id
+-- group by restaurant.name;
